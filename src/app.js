@@ -3,7 +3,6 @@
 mapboxgl.accessToken = 'pk.eyJ1Ijoic3RlcGFua3V6bWluIiwiYSI6Ik1ieW5udm8ifQ.25EOEC2-N92NCWT0Ci9w-Q';
 
 const duration = 5000;
-
 style.transition = {
   duration: duration,
   delay: 0
@@ -16,28 +15,46 @@ const map = new mapboxgl.Map({
   zoom: 12
 });
 
-function updateSwatch(swatchIndex, value) {
-  swatches[swatchIndex].paths.forEach((path) => {
-    const lastKeyIndex = path.length - 1;
-    const tail = path.slice(0, lastKeyIndex).reduce((acc, p) => acc[p], style);
-    tail[path[lastKeyIndex]] = value;
+function setIn(object, path, value) {
+  const lastKeyIndex = path.length - 1;
+  const tail = path.slice(0, lastKeyIndex).reduce((acc, p) => acc[p], object);
+  tail[path[lastKeyIndex]] = value;
+}
+
+const minDuration = 2 * 1000;
+const maxDuration = 15 * 1000;
+function randomDuration() {
+  return Math.floor(minDuration + Math.random() * (maxDuration - minDuration));
+}
+
+function randomHsl() {
+  return 'hsla(' + (Math.random() * 360) + ', 100%, 50%, 1)';
+}
+
+function transitionPath(path) {
+  const transitionPath = path.length === 3 ? path.slice(0) : path.slice(0, 3);
+  transitionPath[3] = path[3] + '-transition';
+  return transitionPath;
+}
+
+function updateSwatch(swatch, color, duration) {
+  swatch.paths.forEach((path) => {
+    setIn(style, path, color);
+    setIn(style, transitionPath(path), { duration: duration });
   });
 }
 
-let colorIndex = 0;
-const colorsCount = swatches[0].values.length;
-
-function render() {
-  if (colorIndex === colorsCount) {
-    colorIndex = 0;
+function render(swatch) {
+  function renderLoop() {
+    const color = randomHsl();
+    const duration = randomDuration();
+    setTimeout(() => {
+      updateSwatch(swatch, color, duration);
+      map.setStyle(style);
+      renderLoop();
+    }, duration);
   }
-
-  setTimeout(() => {
-    swatches.forEach((swatch, index) => updateSwatch(index, swatch.values[colorIndex]));
-    map.setStyle(style);
-    colorIndex++;
-    render();
-  }, duration);
+  renderLoop();
 }
 
-render();
+swatches.forEach(render);

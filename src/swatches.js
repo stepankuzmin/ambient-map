@@ -1,7 +1,6 @@
 const swatches = [
   {
     label: 'Road',
-    values: ['#9e0142', '#d53e4f', '#f46d43'],
     paths: [
       ['layers', '9', 'paint', 'line-color'],
       ['layers', '10', 'paint', 'line-color'],
@@ -12,7 +11,6 @@ const swatches = [
   },
   {
     label: 'Land',
-    values: ['#fdae61', '#fee08b', '#ffffbf'],
     paths: [
       ['layers', '0', 'paint', 'background-color'],
       ['layers', '6', 'paint', 'fill-color'],
@@ -31,7 +29,6 @@ const swatches = [
   },
   {
     label: 'Building',
-    values: ['#e6f598', '#abdda4', '#66c2a5'],
     paths: [
       ['layers', '1', 'paint', 'fill-color'],
       ['layers', '2', 'paint', 'fill-color'],
@@ -47,7 +44,6 @@ const swatches = [
   },
   {
     label: 'Water',
-    values: ['#3288bd', '#5e4fa2', '#e0f3f8'],
     paths: [
       ['layers', '3', 'paint', 'fill-color'],
       ['layers', '4', 'paint', 'line-color'],
@@ -57,7 +53,6 @@ const swatches = [
   },
   {
     label: 'Label',
-    values: ['#404040', '#909090', '#4575b4'],
     paths: [
       ['layers', '21', 'paint', 'line-color'],
       ['layers', '22', 'paint', 'line-color', '6'],
