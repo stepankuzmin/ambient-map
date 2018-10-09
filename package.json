@@ -9,7 +9,9 @@
     "cz": "git-cz",
     "lint": "eslint src",
     "format": "prettier-eslint --write \"src/**/*.js\"",
-    "deploy": "gh-pages -m 'auto commit [ci skip]' -d src"
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html",
+    "deploy": "npm run build && gh-pages -m 'auto commit [ci skip]' -d dist"
   },
   "lint-staged": {
     "*.js": [
@@ -22,6 +24,9 @@
       "path": "cz-conventional-changelog"
     }
   },
+  "dependencies": {
+    "randomcolor": "^0.5.3"
+  },
   "devDependencies": {
     "commitizen": "^3.0.2",
     "cz-conventional-changelog": "^2.1.0",
@@ -33,6 +38,7 @@
     "gh-pages": "^2.0.1",
     "husky": "^1.1.0",
     "lint-staged": "^7.3.0",
+    "parcel-bundler": "^1.10.2",
     "prettier": "^1.14.3",
     "prettier-eslint": "^8.8.2",
     "prettier-eslint-cli": "^4.7.1"

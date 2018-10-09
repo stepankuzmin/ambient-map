@@ -86,3 +86,5 @@ const swatches = [
     ]
   }
 ];
+
+export default swatches;

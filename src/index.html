@@ -5,64 +5,18 @@
   <meta charset='utf-8' />
   <title>Ambient map</title>
   <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/randomcolor/0.5.2/randomColor.min.js"></script>
-  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.js'></script>
-  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.css' rel='stylesheet' />
-
-  <script src='style.js'></script>
-  <script src='swatches.js'></script>
-
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-    }
-
-    #map {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      width: 100%;
-    }
-  </style>
+  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.50.0-beta.1/mapbox-gl.js'></script>
+  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.50.0-beta.1/mapbox-gl.css' rel='stylesheet' />
+  <link href='./styles.css' rel='stylesheet' />
 </head>
 
 <body>
 
   <div id='map'></div>
-  <script src='app.js'></script>
 
-  <!-- Yandex.Metrika counter -->
-  <script type="text/javascript">
-    (function (d, w, c) {
-      (w[c] = w[c] || []).push(function () {
-        try {
-          w.yaCounter50671996 = new Ya.Metrika2({
-            id: 50671996,
-            clickmap: true,
-            trackLinks: true,
-            accurateTrackBounce: true
-          });
-        } catch (e) { }
-      });
+  <script src="./index.js"></script>
 
-      var n = d.getElementsByTagName("script")[0],
-        s = d.createElement("script"),
-        f = function () { n.parentNode.insertBefore(s, n); };
-      s.type = "text/javascript";
-      s.async = true;
-      s.src = "https://mc.yandex.ru/metrika/tag.js";
-
-      if (w.opera == "[object Opera]") {
-        d.addEventListener("DOMContentLoaded", f, false);
-      } else { f(); }
-    })(document, window, "yandex_metrika_callbacks2");
-  </script>
-  <noscript>
-    <div><img src="https://mc.yandex.ru/watch/50671996" style="position:absolute; left:-9999px;" alt="" /></div>
-  </noscript>
-  <!-- /Yandex.Metrika counter -->
+  <script src="./metrika.js"></script>
 
 </body>
 
