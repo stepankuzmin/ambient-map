@@ -1,13 +1,6 @@
 const style = {
   version: 8,
-  name: 'My Cartogram Style',
-  metadata: {
-    'mapbox:sdk-support': {
-      js: 'latest',
-      android: 'latest',
-      ios: 'latest'
-    }
-  },
+  name: 'Cartogram Style',
   center: [-73.99519273984345, 40.71988730982491],
   zoom: 14.429724903175206,
   bearing: 0,
@@ -1351,7 +1344,5 @@ const style = {
         'text-color': 'hsl(0, 0%, 31%)'
       }
     }
-  ],
-  owner: 'tristen',
-  visibility: 'private'
+  ]
 };
