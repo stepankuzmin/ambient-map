@@ -46,8 +46,9 @@ function updateSwatch(swatch, color, duration) {
 
 function render(swatch) {
   function renderLoop() {
-    const color = randomHsl();
+    const color = randomColor({ luminosity: swatch.luminosity });
     const duration = randomDuration();
+
     setTimeout(() => {
       updateSwatch(swatch, color, duration);
       map.setStyle(style);
