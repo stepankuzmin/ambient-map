@@ -1,0 +1,40 @@
+{
+  "name": "ambient-map",
+  "version": "0.1.0",
+  "description": "Ambient Map",
+  "author": "Stepan Kuzmin <to.stepan.kuzmin@gmail.com> (stepankuzmin.ru)",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "cz": "git-cz",
+    "lint": "eslint src",
+    "format": "prettier-eslint --write \"src/**/*.js\"",
+    "deploy": "gh-pages -m 'auto commit [ci skip]' -d src"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier-eslint --write",
+      "git add"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "devDependencies": {
+    "commitizen": "^3.0.2",
+    "cz-conventional-changelog": "^2.1.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-prettier": "^3.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.11.1",
+    "gh-pages": "^2.0.1",
+    "husky": "^1.1.0",
+    "lint-staged": "^7.3.0",
+    "prettier": "^1.14.3",
+    "prettier-eslint": "^8.8.2",
+    "prettier-eslint-cli": "^4.7.1"
+  }
+}
