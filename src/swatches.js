@@ -1,6 +1,9 @@
 const swatches = [
   {
     label: 'Road',
+    luminosity: 'dark',
+    brightness: 58,
+    luminance: 0.042311410620809675,
     paths: [
       ['layers', '9', 'paint', 'line-color'],
       ['layers', '10', 'paint', 'line-color'],
@@ -11,6 +14,9 @@ const swatches = [
   },
   {
     label: 'Land',
+    luminosity: 'dark',
+    brightness: 100,
+    luminance: 0.12743768043564743,
     paths: [
       ['layers', '0', 'paint', 'background-color'],
       ['layers', '6', 'paint', 'fill-color'],
@@ -29,6 +35,9 @@ const swatches = [
   },
   {
     label: 'Building',
+    luminosity: 'bright',
+    brightness: 148,
+    luminance: 0.2961382707983211,
     paths: [
       ['layers', '1', 'paint', 'fill-color'],
       ['layers', '2', 'paint', 'fill-color'],
@@ -44,6 +53,9 @@ const swatches = [
   },
   {
     label: 'Water',
+    luminosity: 'light',
+    brightness: 196,
+    luminance: 0.5520114015120001,
     paths: [
       ['layers', '3', 'paint', 'fill-color'],
       ['layers', '4', 'paint', 'line-color'],
@@ -53,6 +65,9 @@ const swatches = [
   },
   {
     label: 'Label',
+    luminosity: 'light',
+    brightness: 244,
+    luminance: 0.9046611743911496,
     paths: [
       ['layers', '21', 'paint', 'line-color'],
       ['layers', '22', 'paint', 'line-color', '6'],
