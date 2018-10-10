@@ -9,6 +9,9 @@
   "env": {
     "browser": true
   },
+  "globals": {
+    "mapboxgl": true
+  },
   "rules": {
     "arrow-parens": [
       "warn",

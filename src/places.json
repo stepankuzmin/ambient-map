@@ -1,0 +1,50 @@
+[
+    {
+        "label": "New York",
+        "center": [
+            -73.9916,
+            40.7288
+        ],
+        "zoom": 13
+    },
+    {
+        "label": "Boston",
+        "center": [
+            -71.059,
+            42.359
+        ],
+        "zoom": 13
+    },
+    {
+        "label": "Shenzhen",
+        "center": [
+            114.05,
+            22.54
+        ],
+        "zoom": 12
+    },
+    {
+        "label": "Shanghai",
+        "center": [
+            121.48,
+            31.22
+        ],
+        "zoom": 12
+    },
+    {
+        "label": "Darmstadt",
+        "center": [
+            8.64,
+            49.87
+        ],
+        "zoom": 12.5
+    },
+    {
+        "label": "Frankfurt",
+        "center": [
+            8.67,
+            50.108
+        ],
+        "zoom": 12
+    }
+]
