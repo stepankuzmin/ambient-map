@@ -46,5 +46,85 @@
             50.108
         ],
         "zoom": 12
+    },
+    {
+        "label": "Berlin",
+        "center": [
+            13.38,
+            52.518
+        ],
+        "zoom": 12
+    },
+    {
+        "label": "Milan",
+        "center": [
+            9.191,
+            45.465
+        ],
+        "zoom": 12
+    },
+    {
+        "label": "Tunis",
+        "center": [
+            10.179,
+            36.798
+        ],
+        "zoom": 13
+    },
+    {
+        "label": "Atlanta",
+        "center": [
+            -84.391,
+            33.75
+        ],
+        "zoom": 13
+    },
+    {
+        "label": "Bielefeld",
+        "center": [
+            8.539,
+            52.011
+        ],
+        "zoom": 13
+    },
+    {
+        "label": "Tokyo",
+        "center": [
+            139.755,
+            35.682
+        ],
+        "zoom": 13
+    },
+    {
+        "label": "Cergy",
+        "center": [
+            2.035,
+            49.05
+        ],
+        "zoom": 13
+    },
+    {
+        "label": "Cormeilles-en-Parisis",
+        "center": [
+            2.201,
+            48.972
+        ],
+        "zoom": 14
+    },
+    {
+        "label": "Milton Keynes",
+        "center": [
+            -0.761,
+            52.042
+        ],
+        "zoom": 13
+    },
+    {
+        "label": "London",
+        "center": [
+            -0.137,
+            51.504
+        ],
+        "zoom": 12
     }
 ]
