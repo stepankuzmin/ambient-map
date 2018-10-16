@@ -36,9 +36,9 @@
     "eslint-plugin-jsx-a11y": "^6.1.1",
     "eslint-plugin-react": "^7.11.1",
     "gh-pages": "^2.0.1",
-    "husky": "^1.1.0",
+    "husky": "^1.1.2",
     "lint-staged": "^7.3.0",
-    "parcel-bundler": "^1.10.2",
+    "parcel-bundler": "^1.10.3",
     "prettier": "^1.14.3",
     "prettier-eslint": "^8.8.2",
     "prettier-eslint-cli": "^4.7.1"
