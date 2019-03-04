@@ -1,3 +1,4 @@
+import mapboxgl from 'mapbox-gl';
 import randomColor from 'randomcolor';
 
 import style from './style';
@@ -24,7 +25,7 @@ const updateSwatch = (swatch, color, duration) => {
     setIn(style, path, color);
     setIn(style, transitionPath(path), { duration });
   });
-}
+};
 
 function render(swatch) {
   function renderLoop() {
