@@ -5,6 +5,8 @@ const style = {
   zoom: 14.429724903175206,
   bearing: 0,
   pitch: 0,
+  // projection: 'globe',
+  fog: {},
   sources: {
     composite: {
       url: 'mapbox://mapbox.mapbox-streets-v7',
