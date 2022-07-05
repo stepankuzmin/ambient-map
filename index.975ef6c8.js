@@ -539,21 +539,20 @@ var _randomcolor = require("randomcolor");
 var _randomcolorDefault = parcelHelpers.interopDefault(_randomcolor);
 var _style = require("./style");
 var _styleDefault = parcelHelpers.interopDefault(_style);
-var _placesJson = require("./places.json");
-var _placesJsonDefault = parcelHelpers.interopDefault(_placesJson);
 var _swatches = require("./swatches");
 var _swatchesDefault = parcelHelpers.interopDefault(_swatches);
 var _utils = require("./utils");
 const minDuration = 2000;
 const maxDuration = 12000;
 (0, _mapboxGlDefault.default).accessToken = "pk.eyJ1Ijoic3RlcGFua3V6bWluIiwiYSI6Ik1ieW5udm8ifQ.25EOEC2-N92NCWT0Ci9w-Q";
-const placeIdx = (0, _utils.randomInteger)(0, (0, _placesJsonDefault.default).length - 1);
-const place = (0, _placesJsonDefault.default)[placeIdx];
 const map = new (0, _mapboxGlDefault.default).Map({
     container: "map",
     style: (0, _styleDefault.default),
-    center: place.center,
-    zoom: place.zoom,
+    zoom: 1.5,
+    center: [
+        -90,
+        40
+    ],
     projection: "globe"
 });
 window.map = map;
@@ -642,8 +641,9 @@ function render(swatch) {
     updateSwatch(swatch, color, duration);
     render(swatch);
 });
+spinGlobe();
 
-},{"mapbox-gl":"562rs","randomcolor":"4v9QF","./style":"4glpi","./places.json":"jipp9","./swatches":"jFMoX","./utils":"en4he","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"562rs":[function(require,module,exports) {
+},{"mapbox-gl":"562rs","randomcolor":"4v9QF","./style":"4glpi","./swatches":"jFMoX","./utils":"en4he","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"562rs":[function(require,module,exports) {
 /* Mapbox GL JS is Copyright © 2020 Mapbox and subject to the Mapbox Terms of Service ((https://www.mapbox.com/legal/tos/). */ (function(global, factory) {
     module.exports = factory();
 })(this, function() {
@@ -30974,7 +30974,82 @@ const style = {
     bearing: 0,
     pitch: 0,
     // projection: 'globe',
-    fog: {},
+    fog: {
+        range: [
+            1,
+            10
+        ],
+        color: [
+            "interpolate",
+            [
+                "exponential",
+                1.2
+            ],
+            [
+                "zoom"
+            ],
+            5.5,
+            "hsl(240, 12%, 70%)",
+            6,
+            "hsl(0, 0%, 100%)"
+        ],
+        "high-color": [
+            "interpolate",
+            [
+                "exponential",
+                1.2
+            ],
+            [
+                "zoom"
+            ],
+            5.5,
+            "hsl(240, 12%, 7%)",
+            6,
+            "hsl(38, 63%, 84%)"
+        ],
+        "space-color": [
+            "interpolate",
+            [
+                "exponential",
+                1.2
+            ],
+            [
+                "zoom"
+            ],
+            5.5,
+            "hsl(240, 12%, 9%)",
+            6,
+            "hsl(199, 61%, 80%)"
+        ],
+        "horizon-blend": [
+            "interpolate",
+            [
+                "exponential",
+                1.2
+            ],
+            [
+                "zoom"
+            ],
+            5.5,
+            0.008,
+            6,
+            0.15
+        ],
+        "star-intensity": [
+            "interpolate",
+            [
+                "exponential",
+                1.2
+            ],
+            [
+                "zoom"
+            ],
+            5.5,
+            0.1,
+            6,
+            0
+        ]
+    },
     sources: {
         composite: {
             url: "mapbox://mapbox.mapbox-streets-v7",
@@ -33566,9 +33641,6 @@ exports.export = function(dest, destName, get) {
         get: get
     });
 };
-
-},{}],"jipp9":[function(require,module,exports) {
-module.exports = JSON.parse('[{"label":"New York","center":[-73.9916,40.7288],"zoom":13},{"label":"Boston","center":[-71.059,42.359],"zoom":13},{"label":"Shenzhen","center":[114.05,22.54],"zoom":12},{"label":"Shanghai","center":[121.48,31.22],"zoom":12},{"label":"Darmstadt","center":[8.64,49.87],"zoom":12.5},{"label":"Frankfurt","center":[8.67,50.108],"zoom":12},{"label":"Berlin","center":[13.38,52.518],"zoom":12},{"label":"Milan","center":[9.191,45.465],"zoom":12},{"label":"Tunis","center":[10.179,36.798],"zoom":13},{"label":"Atlanta","center":[-84.391,33.75],"zoom":13},{"label":"Bielefeld","center":[8.539,52.011],"zoom":13},{"label":"Tokyo","center":[139.755,35.682],"zoom":13},{"label":"Cergy","center":[2.035,49.05],"zoom":13},{"label":"Cormeilles-en-Parisis","center":[2.201,48.972],"zoom":14},{"label":"Milton Keynes","center":[-0.761,52.042],"zoom":13},{"label":"London","center":[-0.137,51.504],"zoom":12}]');
 
 },{}],"jFMoX":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
