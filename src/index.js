@@ -2,7 +2,6 @@ import mapboxgl from 'mapbox-gl';
 import randomColor from 'randomcolor';
 
 import style from './style';
-import places from './places.json';
 import swatches from './swatches';
 import { randomInteger, transitionPath, setIn } from './utils';
 
@@ -10,14 +9,11 @@ const minDuration = 2 * 1000;
 const maxDuration = 12 * 1000;
 mapboxgl.accessToken = process.env.MAPBOX_ACCESS_TOKEN;
 
-const placeIdx = randomInteger(0, places.length - 1);
-const place = places[placeIdx];
-
 const map = new mapboxgl.Map({
   container: 'map',
   style,
-  center: place.center,
-  zoom: place.zoom,
+  zoom: 1.5,
+  center: [-90, 40],
   projection: 'globe'
 });
 
@@ -110,3 +106,5 @@ swatches.forEach((swatch) => {
   updateSwatch(swatch, color, duration);
   render(swatch);
 });
+
+spinGlobe();

@@ -6,7 +6,38 @@ const style = {
   bearing: 0,
   pitch: 0,
   // projection: 'globe',
-  fog: {},
+  fog: {
+    range: [1, 10],
+    color: [
+      'interpolate',
+      ['exponential', 1.2],
+      ['zoom'],
+      5.5,
+      'hsl(240, 12%, 70%)',
+      6,
+      'hsl(0, 0%, 100%)'
+    ],
+    'high-color': [
+      'interpolate',
+      ['exponential', 1.2],
+      ['zoom'],
+      5.5,
+      'hsl(240, 12%, 7%)',
+      6,
+      'hsl(38, 63%, 84%)'
+    ],
+    'space-color': [
+      'interpolate',
+      ['exponential', 1.2],
+      ['zoom'],
+      5.5,
+      'hsl(240, 12%, 9%)',
+      6,
+      'hsl(199, 61%, 80%)'
+    ],
+    'horizon-blend': ['interpolate', ['exponential', 1.2], ['zoom'], 5.5, 0.008, 6, 0.15],
+    'star-intensity': ['interpolate', ['exponential', 1.2], ['zoom'], 5.5, 0.1, 6, 0]
+  },
   sources: {
     composite: {
       url: 'mapbox://mapbox.mapbox-streets-v7',
